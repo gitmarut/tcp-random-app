@@ -48,8 +48,16 @@ func handleTCPConn(c net.Conn) {
 
 		random := rand.New(rand.New(rand.NewSource((time.Now().UnixMilli())))).Intn(100000)
 
-		result := strconv.Itoa(random) + "\n"
-		c.Write([]byte(string(result)))
+		var result strings.Builder
+
+		// result = strconv.Itoa(random) + "\n"
+
+		result.WriteString(strconv.Itoa(random))
+		result.WriteString(" ")
+		result.WriteString(time.Now().Format(time.RFC850))
+
+
+		c.Write([]byte(result.String()))
 
 	}
 
