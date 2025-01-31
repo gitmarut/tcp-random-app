@@ -6,7 +6,7 @@ This simple App generates random numbers on a TCP connection.
 
 1. Run "go run main.go" in your machine.
 
-2. Or run it as `docker - run --publish 17777:17777 tcp-random-app`
+2. Or run it as `docker run --publish 17777:17777 tcp-random-app`
 (I have this in dockerhub, so get dockerfile from `docker pull gitmarut/tcp-random-app:v1.1`)
 
 3. Or you can deploy it in Kubernetes from the yaml file given in same directory.
